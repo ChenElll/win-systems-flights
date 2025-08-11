@@ -6,26 +6,26 @@ from services.api_client import get_health
 def main():
     app = QApplication(sys.argv)
     window = QWidget()
-    window.setWindowTitle('Flight Advisor')
+    window.setWindowTitle('FlySmart by AirIsrael')
 
-    # Label for displaying the API status
-    status_label = QLabel('Checking API…')
-    # Welcome label
-    welcome = QLabel('Welcome to the Flight Advisor')
+    # Branding
+    welcome = QLabel('Welcome to FlySmart by AirIsrael')
+    assistant = QLabel('Assistant: Wingman AI')
+    status_label = QLabel('Checking API')
 
-    # Layout configuration
+    # Layout
     layout = QVBoxLayout()
     layout.addWidget(welcome)
+    layout.addWidget(assistant)
     layout.addWidget(status_label)
     window.setLayout(layout)
     window.show()
 
-    # Update the API status after the window is loaded
+    # Update API status after the window is loaded
     def update_status():
         status_label.setText(get_health())
 
     QTimer.singleShot(100, update_status)
-
     sys.exit(app.exec())
 
 if __name__ == '__main__':

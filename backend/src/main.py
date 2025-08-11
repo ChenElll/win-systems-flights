@@ -1,7 +1,13 @@
 ﻿from fastapi import FastAPI
 
-app = FastAPI(title='Flight Advisor API')
+app = FastAPI(title='FlySmart API (AirIsrael)')
 
 @app.get('/health')
 def health():
-    return {'status': 'ok'}
+    return {
+        'status': 'ok',
+        'app': 'FlySmart',
+        'brand': 'FlySmart by AirIsrael',
+        'assistant': 'Wingman AI',
+        'airline': 'AirIsrael',
+    }
